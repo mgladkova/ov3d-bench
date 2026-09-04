@@ -11,7 +11,7 @@ import torch
 from scipy.optimize import linear_sum_assignment
 
 from .io import DEFAULT_FILTER_SETTINGS, Omni3DDataset, prediction_bbox2d_xywh
-from .omni3d import Omni3Deval, box3d_overlap
+from .omni3d import load as _load_omni3d_backend
 
 AP_METRICS = ["AP", "AP15", "AP25", "AP50", "APn", "APm", "APf"]
 
@@ -65,6 +65,7 @@ def greedy_confidence_match(iou, scores, min_iou):
 
 
 def _iou3d(pred_boxes, gt_boxes):
+    _, box3d_overlap = _load_omni3d_backend()
     pred = torch.tensor(pred_boxes, dtype=torch.float32)
     gt = torch.tensor(gt_boxes, dtype=torch.float32)
     return box3d_overlap(pred, gt).cpu().numpy()
@@ -212,6 +213,7 @@ def eval_ap3d(gt_json_path, target_categories, omni_results):
     settings = dict(DEFAULT_FILTER_SETTINGS)
     settings["category_names"] = target_categories
 
+    Omni3Deval, _ = _load_omni3d_backend()
     gt = Omni3DDataset(gt_json_path, filter_settings=settings)
     dt = gt.loadRes(omni_results)
 
@@ -237,6 +239,7 @@ def per_category_ap(gt_json_path, target_categories, omni_results, id_to_name):
     settings = dict(DEFAULT_FILTER_SETTINGS)
     settings["category_names"] = target_categories
 
+    Omni3Deval, _ = _load_omni3d_backend()
     gt = Omni3DDataset(gt_json_path, filter_settings=settings)
     dt = gt.loadRes(omni_results)
     ev = Omni3Deval(gt, dt, iouType="bbox", mode="3D")

@@ -16,11 +16,13 @@ jobs:
       - uses: actions/checkout@v4
 
       # PyTorch3D supplies the 3D IoU every metric needs and is not on PyPI, so
-      # the environment comes from conda. Runners have no GPU, so the CUDA pin is
-      # dropped; everything under test is CPU-only.
+      # the environment comes from conda. Runners have no GPU, so `pytorch-cuda`
+      # is swapped for `cpuonly` rather than simply deleted: deleting it leaves
+      # conda free to pick a CUDA-built pytorch3d against a CPU torch, which then
+      # fails at import with a missing libc10_cuda.so.
       - name: Build a CPU environment from environment.yml
         run: |
-          grep -v 'pytorch-cuda' environment.yml > environment-ci.yml
+          sed 's/- pytorch-cuda=.*/- cpuonly/' environment.yml > environment-ci.yml
           cat environment-ci.yml
       - uses: conda-incubator/setup-miniconda@v3
         with:
@@ -37,8 +39,10 @@ jobs:
       - name: Install the package and test dependencies
         run: pip install -e '.[dev]'
 
+      # Metric tests self-skip if PyTorch3D is unusable, so this step still
+      # covers the loaders, ontology and CLI. -rs reports what was skipped.
       - name: Smoke test
-        run: pytest tests/test_smoke.py -v
+        run: pytest tests/test_smoke.py -v -rs
 
       - name: CLI is wired
         run: ov3d-bench --help
