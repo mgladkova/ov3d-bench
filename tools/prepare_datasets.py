@@ -26,7 +26,7 @@ import shutil
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-DEFAULT_VOCAB = os.path.join(HERE, "..", "data", "class_mapping.json")
+DEFAULT_VOCAB = os.path.join(HERE, "..", "ov3d_bench", "data", "class_mapping.json")
 
 # Load-bearing: fixes the id space. Objectron is scored by nothing but must be
 # processed, because dropping it shifts the ids of every dataset after it.

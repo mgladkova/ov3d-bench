@@ -5,13 +5,15 @@ import os
 import sys
 
 from .eval import run_eval, run_per_category
+from .resources import resource_path
 
 
 def _add_eval_args(p):
     p.add_argument("--gt-json", required=True, help="Omni3D-format ground-truth json")
     p.add_argument("--pred", required=True, help="predictions (.json, .jsonl or .pth)")
     p.add_argument("--target-cats", default=None,
-                   help="dataset-level vocabulary: comma list, .txt, or dataset->list .json")
+                   help="dataset-level vocabulary: comma list, .txt, or dataset->list .json. "
+                        "Defaults to the vocabularies shipped with the benchmark")
     p.add_argument("--dataset-name", default=None,
                    help="key into the target-category json (inferred from the GT filename)")
     p.add_argument("--outdir", default=None, help="write results.json here")
@@ -111,6 +113,11 @@ def main(argv=None):
     p_tp.add_argument("--no-strict-categories", action="store_true")
 
     args = parser.parse_args(argv)
+
+    # The dataset-level vocabulary is a property of the benchmark, so the
+    # shipped lists are the default rather than something to pass every time.
+    if getattr(args, "target_cats", None) is None and hasattr(args, "target_cats"):
+        args.target_cats = resource_path("datasets.json")
 
     if args.command == "eval":
         results = run_eval(

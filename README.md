@@ -1,39 +1,99 @@
 # OV3D-Bench
 
-Diagnostic benchmark for open-vocabulary monocular 3D detectors.
+Diagnostic benchmark for open-vocabulary monocular 3D object detection.
 
-Reports mAP3D alongside diagnostics that a single number hides: 3D class-agnostic
-recall, which credits a well-localized box regardless of its predicted label;
-confusion matrices over successfully localized objects; the inflation caused by
-target-aware prompting; prompt-template robustness; and the sensitivity of AP to
-which categories are scored.
+A single mAP number hides where a detector actually fails. OV3D-Bench reports
+mAP3D alongside diagnostics that separate the causes: **3D class-agnostic recall**,
+which credits a well-localized box regardless of its predicted label; **confusion
+matrices** over objects that were localized successfully; the **inflation caused by
+target-aware prompting**; **prompt-template robustness**; and the **sensitivity of
+AP to which categories are scored**.
 
-## Install
+## 📦 Install
 
 ```bash
 pip install -e .            # evaluation
 pip install -e '.[remap]'   # + SigLIPv2/CLIP remapping
+pip install -e '.[data]'    # + building datasets from raw sources
 ```
 
-## Use
+**PyTorch3D is required** and is not installable from PyPI. It provides the 3D IoU
+used by every metric, and needs a build matched to your torch and CUDA version:
 
 ```bash
-ov3d-bench eval --gt-json <Dataset>_test.json --pred predictions.pth \
-                --target-cats data/datasets.json --dataset-name <Dataset> \
-                --class-agnostic --iou3d-min 0.15
+conda install pytorch3d -c pytorch3d      # or build from source
 ```
 
-Other commands: `per-category`, `vocab-subset`, `supercat`, `templates`.
-Data preparation is described in [docs/DATA.md](docs/DATA.md).
+## 🚀 Use
 
-## Reproducing the paper
+```bash
+ov3d-bench eval --gt-json ARKitScenes_test.json --pred predictions.pth \
+                --dataset-name ARKitScenes --class-agnostic --iou3d-min 0.15
+```
+
+The dataset-level vocabulary defaults to the lists shipped with the benchmark.
+
+Other commands: `per-category` (dataset-level vs target-aware AP per class),
+`vocab-subset` (how much AP depends on which categories are scored), `supercat`
+(confusion on a coarse shared ontology), `templates` (prompt robustness).
+Add `--visualize` to `eval` for ground-truth-vs-prediction 3D box overlays.
+
+### 📄 Prediction format
+
+`.json`, `.jsonl` (streamable) or `.pth`, as either per-frame records
+`{"image_id", "instances": [...]}` or a flat list of instances. Each instance:
+
+| Field | Meaning |
+|---|---|
+| `image_id` | matches the ground-truth image id |
+| `category_id` | ground-truth category id, or `0..K-1` with `--remap-from-sequential-ids` |
+| `score` | confidence |
+| `bbox` | 2D box, `xywh` by default or `xyxy` via `--pred-bbox-format` |
+| `bbox3D` | 8x3 camera-frame corners, Omni3D ordering |
+
+Large prediction sets should use `.jsonl` with `--stream`: `torch.load` on a `.pth`
+expands roughly sevenfold in memory.
+
+## 🗂️ Data
+
+The evaluation jsons are built locally from each source dataset under its own
+terms. See [docs/DATA.md](docs/DATA.md), and always run
+`tools/verify_datasets.py` after a rebuild, because image ids are not portable
+between differently-ordered rebuilds.
+
+## 🔬 Reproducing the paper
 
 Categories are scored over each dataset's full declared vocabulary. Some numbers
-therefore differ slightly from the paper's Tables 2 and 7, which omitted a small
-number of categories, and instead match Table 5. The differences are at most
-0.22 mAP3D and affect no ranking.
+therefore differ slightly from Tables 2 and 7, which omitted a small number of
+categories, and instead match Table 5. Differences are at most 0.22 mAP3D and
+affect no ranking.
 
-## Licence
+## 📚 Citation
 
-Apache 2.0, except `ov3d_bench/omni3d/`, which is derived from Omni3D / Cube R-CNN
-and remains CC-BY-NC 4.0. See [NOTICE](NOTICE).
+```bibtex
+@article{gladkova2026ov3d,
+  title={OV3D-Bench: A Diagnostic Benchmark for Open-Vocabulary Monocular 3D Detection},
+  author={Gladkova, Mariia and Peri, Neehar and Khatri, Ishan and Ramanan, Deva and Cremers, Daniel},
+  journal={arXiv preprint arXiv:2608.17110},
+  year={2026}
+}
+```
+
+The mAP3D metric and the evaluation jsons derive from Omni3D, which its licence
+requires you to cite as well:
+
+```bibtex
+@inproceedings{brazil2023omni3d,
+  title={{Omni3D}: A Large Benchmark and Model for {3D} Object Detection in the Wild},
+  author={Brazil, Garrick and Kumar, Abhinav and Straub, Julian and Ravi, Nikhila
+          and Johnson, Justin and Gkioxari, Georgia},
+  booktitle={CVPR},
+  year={2023}
+}
+```
+
+## ⚖️ Licence
+
+Apache 2.0, except `ov3d_bench/omni3d/`, which derives from Omni3D / Cube R-CNN and
+remains CC-BY-NC 4.0. Because Omni3D's annotations are also CC-BY-NC, evaluation on
+the five in-domain datasets is non-commercial regardless. See [NOTICE](NOTICE).

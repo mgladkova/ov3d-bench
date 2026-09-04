@@ -21,8 +21,9 @@ import statistics
 from . import io as bio
 from . import metrics
 
-DEFAULT_TEMPLATES = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                                 "..", "data", "prompt_templates.json")
+from .resources import resource_path
+
+DEFAULT_TEMPLATES = resource_path("prompt_templates.json")
 
 
 def load_template_bank(path=None):

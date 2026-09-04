@@ -11,8 +11,9 @@ import os
 
 import numpy as np
 
-DEFAULT_ONTOLOGY = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                                "..", "data", "supercategories.json")
+from .resources import resource_path
+
+DEFAULT_ONTOLOGY = resource_path("supercategories.json")
 
 
 def load_ontology(path=None):

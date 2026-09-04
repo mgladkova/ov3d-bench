@@ -25,8 +25,9 @@ import json
 import os
 from collections import defaultdict
 
-DEFAULT_PROMPT_NAMES = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                                    "..", "data", "prompt_names.json")
+from .resources import resource_path
+
+DEFAULT_PROMPT_NAMES = resource_path("prompt_names.json")
 
 
 def load_display_names(path=None):

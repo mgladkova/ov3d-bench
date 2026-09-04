@@ -3,7 +3,7 @@ import json
 import os
 
 _PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                     "..", "..", "data", "class_mapping.json")
+                     "..", "..", "ov3d_bench", "data", "class_mapping.json")
 with open(_PATH) as _f:
     _DATA = json.load(_f)
 

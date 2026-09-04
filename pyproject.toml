@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ov3d-bench"
+version = "0.1.0"
+description = "Diagnostic benchmark for open-vocabulary monocular 3D object detection"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Mariia Gladkova" }, { name = "Neehar Peri" }, { name = "Ishan Khatri" },
+           { name = "Deva Ramanan" }, { name = "Daniel Cremers" }]
+keywords = ["3d-object-detection", "open-vocabulary", "benchmark", "monocular", "omni3d"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Intended Audience :: Science/Research",
+]
+
+# NOTE: pytorch3d is a hard requirement (3D IoU) but is not installable from PyPI;
+# it needs a source or conda build matched to your torch/CUDA. See the README.
+dependencies = [
+    "numpy>=1.21",
+    "scipy>=1.7",
+    "torch>=1.13",
+    "pycocotools>=2.0",
+    "opencv-python>=4.5",
+    "matplotlib>=3.4",
+    "Pillow>=8.0",
+    "tqdm>=4.60",
+]
+
+[project.optional-dependencies]
+# Training-free remapping of a closed-vocabulary detector, and contrastive
+# template robustness.
+remap = ["transformers>=4.40"]
+# Building the evaluation jsons from raw datasets (tools/), never needed to run
+# the benchmark. The av2-api devkit is not on PyPI; see docs/DATA.md.
+data = ["shapely>=2.0", "pyquaternion>=0.9"]
+
+[project.urls]
+Homepage = "https://github.com/mgladkova/ov3d-bench"
+
+[project.scripts]
+ov3d-bench = "ov3d_bench.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["ov3d_bench*"]
+
+[tool.setuptools.package-data]
+ov3d_bench = ["data/*.json", "omni3d/LICENSE.md"]
