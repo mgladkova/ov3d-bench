@@ -1,0 +1,111 @@
+{
+  "_note": "Reference manifest of the OV3D-Bench evaluation jsons as published. Regenerated datasets MUST match these values; divergence means the generation order or dataset set differed.",
+  "_source": "Omni3D-format evaluation jsons as published with the paper",
+  "datasets": {
+    "nuScenes": {
+      "dataset_id": [
+        0
+      ],
+      "split": "val",
+      "source": "nuScenes",
+      "n_images": 6019,
+      "n_annotations": 57735,
+      "n_categories": 273,
+      "image_id_min": 28130,
+      "image_id_max": 34148,
+      "ann_id_min": 298703,
+      "ann_id_max": 356437,
+      "categories_sha256": "46a5640bfcee2c88"
+    },
+    "ARKitScenes": {
+      "dataset_id": [
+        1
+      ],
+      "split": "val",
+      "source": "ARKitScenes",
+      "n_images": 7610,
+      "n_annotations": 56404,
+      "n_categories": 273,
+      "image_id_min": 87463,
+      "image_id_max": 95072,
+      "ann_id_min": 776535,
+      "ann_id_max": 832938,
+      "categories_sha256": "46a5640bfcee2c88"
+    },
+    "KITTI": {
+      "dataset_id": [
+        3
+      ],
+      "split": "val",
+      "source": "KITTI",
+      "n_images": 3769,
+      "n_annotations": 25909,
+      "n_categories": 273,
+      "image_id_min": 145429,
+      "image_id_max": 149197,
+      "ann_id_min": 911758,
+      "ann_id_max": 937666,
+      "categories_sha256": "46a5640bfcee2c88"
+    },
+    "Hypersim": {
+      "dataset_id": [
+        4
+      ],
+      "split": "val",
+      "source": "Hypersim",
+      "n_images": 7690,
+      "n_annotations": 239781,
+      "n_categories": 273,
+      "image_id_min": 216127,
+      "image_id_max": 223816,
+      "ann_id_min": 2984916,
+      "ann_id_max": 3224696,
+      "categories_sha256": "46a5640bfcee2c88"
+    },
+    "SUNRGBD": {
+      "dataset_id": [
+        5
+      ],
+      "split": "val",
+      "source": "SUNRGBD",
+      "n_images": 5050,
+      "n_annotations": 37826,
+      "n_categories": 273,
+      "image_id_min": 229102,
+      "image_id_max": 234151,
+      "ann_id_min": 3265385,
+      "ann_id_max": 3303210,
+      "categories_sha256": "46a5640bfcee2c88"
+    },
+    "AV2": {
+      "dataset_id": [
+        6
+      ],
+      "split": "val",
+      "source": "AV2",
+      "n_images": 2404,
+      "n_annotations": 31888,
+      "n_categories": 273,
+      "image_id_min": 245392,
+      "image_id_max": 247795,
+      "ann_id_min": 3461600,
+      "ann_id_max": 3493487,
+      "categories_sha256": "46a5640bfcee2c88"
+    },
+    "ScanNet": {
+      "dataset_id": [
+        7
+      ],
+      "split": "val",
+      "source": "ScanNet",
+      "n_images": 5436,
+      "n_annotations": 82826,
+      "n_categories": 273,
+      "image_id_min": 267262,
+      "image_id_max": 272697,
+      "ann_id_min": 3785330,
+      "ann_id_max": 3868155,
+      "categories_sha256": "46a5640bfcee2c88"
+    }
+  }
+}

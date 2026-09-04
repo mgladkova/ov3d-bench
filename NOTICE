@@ -1,0 +1,33 @@
+OV3D-Bench
+Copyright (c) 2026 the OV3D-Bench authors
+
+The majority of OV3D-Bench is licensed under the Apache License 2.0 (see LICENSE).
+
+Portions of this project are available under separate licence terms:
+
+  ov3d_bench/omni3d/
+      Derived from Omni3D / Cube R-CNN (Copyright (c) Meta Platforms, Inc. and
+      affiliates), https://github.com/facebookresearch/omni3d
+      Licensed under CC-BY-NC 4.0. See ov3d_bench/omni3d/LICENSE.md.
+        omni3d_eval.py  implements the AP3D metric; required to RUN the benchmark.
+        geometry.py     trimmed helpers (13 of 45 definitions) used only to BUILD
+                        datasets; users who obtain the jsons another way never
+                        load it. detectron2 is not required by either.
+
+  tools/convert/av2.py, tools/convert/scannet.py
+      Authored by Neehar Peri for the omni3d-xl pipeline, included with permission
+      as a co-author. Apache 2.0 with the rest of this project.
+
+Third-party code adapted within the above:
+  - 3D IoU (box3d_overlap) builds on PyTorch3D, BSD-3-Clause.
+  - The evaluator's structure follows pycocotools COCOeval, BSD-2-Clause.
+
+If you use OV3D-Bench, please also cite Omni3D:
+
+  @inproceedings{brazil2023omni3d,
+    author    = {Brazil, Garrick and Kumar, Abhinav and Straub, Julian and
+                 Ravi, Nikhila and Johnson, Justin and Gkioxari, Georgia},
+    title     = {{Omni3D}: A Large Benchmark and Model for {3D} Object Detection in the Wild},
+    booktitle = {CVPR},
+    year      = {2023}
+  }

@@ -1,0 +1,9 @@
+{
+ "_note": "Human-readable text for a category when it is fed to a text encoder. Applied ONLY at prompt-construction time, never for identity: the keys are ground-truth category names and identity always resolves by those. This separation is deliberate. The research code conflated the two, so the typo corrections never reached the text encoder.",
+ "names": {
+  "case_of_watter_bottles": "case_of_water_bottles",
+  "night_stand": "nightstand",
+  "stationary": "stationery",
+  "disk_rack": "dish_rack"
+ }
+}

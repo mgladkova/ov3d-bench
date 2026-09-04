@@ -1,0 +1,24 @@
+{
+  "_provenance": "Taxonomy grounded in Lin, Xiu & Gorlatova 2026 (open-set detection prompt types: standard / underdetailed / overdetailed) and Li et al. 2025 RobustPrompt (within-group variation axes: article, synonym, sentence-length). Domain-neutral so the same bank applies indoor and outdoor.",
+  "underdetailed": [
+    "{name}",
+    "a {name}",
+    "the {name}",
+    "one {name}",
+    "{name} object"
+  ],
+  "standard": [
+    "a photo of a {name}",
+    "an image of a {name}",
+    "a picture of a {name}",
+    "a cropped photo of a {name}",
+    "a close-up photo of a {name}"
+  ],
+  "overdetailed": [
+    "a detailed high-resolution photo of a {name}",
+    "a 3D rendering of a {name} object",
+    "a photo of a single {name} with visible shape and texture",
+    "a close-up photo of a {name} showing fine details",
+    "a well-lit photo of a {name} with clear edges"
+  ]
+}

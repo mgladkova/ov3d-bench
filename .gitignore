@@ -216,3 +216,13 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ---- OV3D-Bench: internal regression artifacts (NOT for public release) ----
+# Golden fixtures reference prediction files that exist only on the dev machine
+# and embed absolute local paths. Needed for the Phase 1 port, never published.
+tests/golden/
+tests/reference/golden_manifest.json
+tests/run_regression.py
+
+# internal: defect notes, not for public release
+docs/FIXES.md
