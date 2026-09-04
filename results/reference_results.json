@@ -1,0 +1,1624 @@
+{
+ "_note": "Scalar results measured with this code on the published predictions. Use them to confirm your setup reproduces the benchmark: run the same command on the same predictions and compare. Confusion matrices are omitted for size; see the paper for those.",
+ "_protocol": {
+  "class_agnostic_recall": "--class-agnostic --iou3d-min 0.15",
+  "confusion_and_map": "--iou3d-min 0.5",
+  "target_aware": "--iou3d-min 0.5 --target-aware"
+ },
+ "_caveat": "Produced with the corrected vocabularies, so a few values differ slightly from the paper's Tables 2 and 7 and match Table 5. See the README section on reproducing the paper.",
+ "eval": {
+  "cubercnn_ARKitScenes_greedy": {
+   "mAP3D": 0.0005,
+   "AP15": 0.0004,
+   "AP25": 0.0001,
+   "AP50": 0.0,
+   "recall": 0.334108,
+   "avg_tp_iou3d": 0.385293,
+   "matches": 18845,
+   "total_gts": 56404,
+   "model": "cubercnn",
+   "dataset": "ARKitScenes"
+  },
+  "cubercnn_ARKitScenes_hungarian": {
+   "mAP3D": 0.0005,
+   "AP15": 0.0004,
+   "AP25": 0.0001,
+   "AP50": 0.0,
+   "recall": 0.334604,
+   "avg_tp_iou3d": 0.417784,
+   "matches": 18873,
+   "total_gts": 56404,
+   "model": "cubercnn",
+   "dataset": "ARKitScenes"
+  },
+  "cubercnn_AV2_greedy": {
+   "mAP3D": 0.0,
+   "AP15": 0.0,
+   "AP25": 0.0,
+   "AP50": 0.0,
+   "recall": 0.285374,
+   "avg_tp_iou3d": 0.416529,
+   "matches": 9100,
+   "total_gts": 31888,
+   "model": "cubercnn",
+   "dataset": "AV2"
+  },
+  "cubercnn_AV2_hungarian": {
+   "mAP3D": 0.0,
+   "AP15": 0.0,
+   "AP25": 0.0,
+   "AP50": 0.0,
+   "recall": 0.285531,
+   "avg_tp_iou3d": 0.445849,
+   "matches": 9105,
+   "total_gts": 31888,
+   "model": "cubercnn",
+   "dataset": "AV2"
+  },
+  "cubercnn_Hypersim_greedy": {
+   "mAP3D": 0.0,
+   "AP15": 0.0,
+   "AP25": 0.0,
+   "AP50": 0.0,
+   "recall": 0.085265,
+   "avg_tp_iou3d": 0.312203,
+   "matches": 20406,
+   "total_gts": 239324,
+   "model": "cubercnn",
+   "dataset": "Hypersim"
+  },
+  "cubercnn_Hypersim_hungarian": {
+   "mAP3D": 0.0,
+   "AP15": 0.0,
+   "AP25": 0.0,
+   "AP50": 0.0,
+   "recall": 0.085148,
+   "avg_tp_iou3d": 0.333676,
+   "matches": 20378,
+   "total_gts": 239324,
+   "model": "cubercnn",
+   "dataset": "Hypersim"
+  },
+  "cubercnn_KITTI_greedy": {
+   "mAP3D": 0.0,
+   "AP15": 0.0,
+   "AP25": 0.0,
+   "AP50": 0.0,
+   "recall": 0.716334,
+   "avg_tp_iou3d": 0.519995,
+   "matches": 14336,
+   "total_gts": 20013,
+   "model": "cubercnn",
+   "dataset": "KITTI"
+  },
+  "cubercnn_KITTI_hungarian": {
+   "mAP3D": 0.0,
+   "AP15": 0.0,
+   "AP25": 0.0,
+   "AP50": 0.0,
+   "recall": 0.716384,
+   "avg_tp_iou3d": 0.534198,
+   "matches": 14337,
+   "total_gts": 20013,
+   "model": "cubercnn",
+   "dataset": "KITTI"
+  },
+  "cubercnn_SUNRGBD_greedy": {
+   "mAP3D": 0.0009,
+   "AP15": 0.0007,
+   "AP25": 0.0001,
+   "AP50": 0.0,
+   "recall": 0.522006,
+   "avg_tp_iou3d": 0.394225,
+   "matches": 19594,
+   "total_gts": 37536,
+   "model": "cubercnn",
+   "dataset": "SUNRGBD"
+  },
+  "cubercnn_SUNRGBD_hungarian": {
+   "mAP3D": 0.0009,
+   "AP15": 0.0007,
+   "AP25": 0.0001,
+   "AP50": 0.0,
+   "recall": 0.523231,
+   "avg_tp_iou3d": 0.431681,
+   "matches": 19640,
+   "total_gts": 37536,
+   "model": "cubercnn",
+   "dataset": "SUNRGBD"
+  },
+  "cubercnn_ScanNet_greedy": {
+   "mAP3D": 0.0002,
+   "AP15": 0.0004,
+   "AP25": 0.0001,
+   "AP50": 0.0,
+   "recall": 0.15723,
+   "avg_tp_iou3d": 0.329272,
+   "matches": 12996,
+   "total_gts": 82656,
+   "model": "cubercnn",
+   "dataset": "ScanNet"
+  },
+  "cubercnn_ScanNet_hungarian": {
+   "mAP3D": 0.0002,
+   "AP15": 0.0004,
+   "AP25": 0.0001,
+   "AP50": 0.0,
+   "recall": 0.157169,
+   "avg_tp_iou3d": 0.365418,
+   "matches": 12991,
+   "total_gts": 82656,
+   "model": "cubercnn",
+   "dataset": "ScanNet"
+  },
+  "cubercnn_nuScenes_greedy": {
+   "mAP3D": 0.0,
+   "AP15": 0.0,
+   "AP25": 0.0,
+   "AP50": 0.0,
+   "recall": 0.388828,
+   "avg_tp_iou3d": 0.459764,
+   "matches": 22449,
+   "total_gts": 57735,
+   "model": "cubercnn",
+   "dataset": "nuScenes"
+  },
+  "cubercnn_nuScenes_hungarian": {
+   "mAP3D": 0.0,
+   "AP15": 0.0,
+   "AP25": 0.0,
+   "AP50": 0.0,
+   "recall": 0.389019,
+   "avg_tp_iou3d": 0.4826,
+   "matches": 22460,
+   "total_gts": 57735,
+   "model": "cubercnn",
+   "dataset": "nuScenes"
+  },
+  "detany3d_ARKitScenes_conf050": {
+   "mAP3D": 19.9223,
+   "AP15": 29.4091,
+   "AP25": 20.757,
+   "AP50": 4.3317,
+   "recall": 0.03654,
+   "avg_tp_iou3d": 0.600625,
+   "matches": 2061,
+   "total_gts": 56404
+  },
+  "detany3d_ARKitScenes_greedy": {
+   "mAP3D": 19.9223,
+   "AP15": 29.4091,
+   "AP25": 20.757,
+   "AP50": 4.3317,
+   "recall": 0.170343,
+   "avg_tp_iou3d": 0.391407,
+   "matches": 9608,
+   "total_gts": 56404,
+   "model": "detany3d",
+   "dataset": "ARKitScenes"
+  },
+  "detany3d_ARKitScenes_hungarian": {
+   "mAP3D": 19.9223,
+   "AP15": 29.4091,
+   "AP25": 20.757,
+   "AP50": 4.3317,
+   "recall": 0.170839,
+   "avg_tp_iou3d": 0.393903,
+   "matches": 9636,
+   "total_gts": 56404,
+   "model": "detany3d",
+   "dataset": "ARKitScenes"
+  },
+  "detany3d_ARKitScenes_tap050": {
+   "mAP3D": 21.4725,
+   "AP15": 31.8005,
+   "AP25": 22.0976,
+   "AP50": 4.4964,
+   "recall": 0.03654,
+   "avg_tp_iou3d": 0.600625,
+   "matches": 2061,
+   "total_gts": 56404
+  },
+  "detany3d_AV2_greedy": {
+   "mAP3D": 0.82,
+   "AP15": 1.4868,
+   "AP25": 0.7414,
+   "AP50": 0.0038,
+   "recall": 0.141746,
+   "avg_tp_iou3d": 0.431072,
+   "matches": 4520,
+   "total_gts": 31888,
+   "model": "detany3d",
+   "dataset": "AV2"
+  },
+  "detany3d_AV2_hungarian": {
+   "mAP3D": 0.82,
+   "AP15": 1.4868,
+   "AP25": 0.7414,
+   "AP50": 0.0038,
+   "recall": 0.141777,
+   "avg_tp_iou3d": 0.431406,
+   "matches": 4521,
+   "total_gts": 31888,
+   "model": "detany3d",
+   "dataset": "AV2"
+  },
+  "detany3d_Hypersim_greedy": {
+   "mAP3D": 6.2342,
+   "AP15": 9.5652,
+   "AP25": 7.1285,
+   "AP50": 0.6202,
+   "recall": 0.063813,
+   "avg_tp_iou3d": 0.330038,
+   "matches": 15272,
+   "total_gts": 239324,
+   "model": "detany3d",
+   "dataset": "Hypersim"
+  },
+  "detany3d_Hypersim_hungarian": {
+   "mAP3D": 6.2342,
+   "AP15": 9.5652,
+   "AP25": 7.1285,
+   "AP50": 0.6202,
+   "recall": 0.063746,
+   "avg_tp_iou3d": 0.332817,
+   "matches": 15256,
+   "total_gts": 239324,
+   "model": "detany3d",
+   "dataset": "Hypersim"
+  },
+  "detany3d_KITTI_conf050": {
+   "mAP3D": 19.6518,
+   "AP15": 28.2908,
+   "AP25": 21.2822,
+   "AP50": 5.9782,
+   "recall": 0.253535,
+   "avg_tp_iou3d": 0.63735,
+   "matches": 5074,
+   "total_gts": 20013
+  },
+  "detany3d_KITTI_greedy": {
+   "mAP3D": 19.6518,
+   "AP15": 28.2908,
+   "AP25": 21.2822,
+   "AP50": 5.9782,
+   "recall": 0.641983,
+   "avg_tp_iou3d": 0.457297,
+   "matches": 12848,
+   "total_gts": 20013,
+   "model": "detany3d",
+   "dataset": "KITTI"
+  },
+  "detany3d_KITTI_hungarian": {
+   "mAP3D": 19.6518,
+   "AP15": 28.2908,
+   "AP25": 21.2822,
+   "AP50": 5.9782,
+   "recall": 0.641983,
+   "avg_tp_iou3d": 0.458173,
+   "matches": 12848,
+   "total_gts": 20013,
+   "model": "detany3d",
+   "dataset": "KITTI"
+  },
+  "detany3d_KITTI_tap050": {
+   "mAP3D": 22.5456,
+   "AP15": 32.592,
+   "AP25": 24.4812,
+   "AP50": 6.6425,
+   "recall": 0.253535,
+   "avg_tp_iou3d": 0.63735,
+   "matches": 5074,
+   "total_gts": 20013
+  },
+  "detany3d_SUNRGBD_conf050": {
+   "mAP3D": 8.8104,
+   "AP15": 13.5943,
+   "AP25": 8.6995,
+   "AP50": 1.5196,
+   "recall": 0.104406,
+   "avg_tp_iou3d": 0.603933,
+   "matches": 3919,
+   "total_gts": 37536
+  },
+  "detany3d_SUNRGBD_greedy": {
+   "mAP3D": 8.8104,
+   "AP15": 13.5943,
+   "AP25": 8.6995,
+   "AP50": 1.5196,
+   "recall": 0.438619,
+   "avg_tp_iou3d": 0.396237,
+   "matches": 16464,
+   "total_gts": 37536,
+   "model": "detany3d",
+   "dataset": "SUNRGBD"
+  },
+  "detany3d_SUNRGBD_hungarian": {
+   "mAP3D": 8.8104,
+   "AP15": 13.5943,
+   "AP25": 8.6995,
+   "AP50": 1.5196,
+   "recall": 0.439525,
+   "avg_tp_iou3d": 0.398729,
+   "matches": 16498,
+   "total_gts": 37536,
+   "model": "detany3d",
+   "dataset": "SUNRGBD"
+  },
+  "detany3d_SUNRGBD_tap050": {
+   "mAP3D": 11.7282,
+   "AP15": 18.4391,
+   "AP25": 10.9276,
+   "AP50": 1.7826,
+   "recall": 0.104406,
+   "avg_tp_iou3d": 0.603933,
+   "matches": 3919,
+   "total_gts": 37536
+  },
+  "detany3d_ScanNet_conf050": {
+   "mAP3D": 2.8853,
+   "AP15": 4.4602,
+   "AP25": 2.8833,
+   "AP50": 0.564,
+   "recall": 0.009134,
+   "avg_tp_iou3d": 0.576585,
+   "matches": 755,
+   "total_gts": 82656
+  },
+  "detany3d_ScanNet_greedy": {
+   "mAP3D": 2.8853,
+   "AP15": 4.4602,
+   "AP25": 2.8833,
+   "AP50": 0.564,
+   "recall": 0.145652,
+   "avg_tp_iou3d": 0.332365,
+   "matches": 12039,
+   "total_gts": 82656,
+   "model": "detany3d",
+   "dataset": "ScanNet"
+  },
+  "detany3d_ScanNet_hungarian": {
+   "mAP3D": 2.8853,
+   "AP15": 4.4602,
+   "AP25": 2.8833,
+   "AP50": 0.564,
+   "recall": 0.145712,
+   "avg_tp_iou3d": 0.342207,
+   "matches": 12044,
+   "total_gts": 82656,
+   "model": "detany3d",
+   "dataset": "ScanNet"
+  },
+  "detany3d_ScanNet_tap050": {
+   "mAP3D": 5.5376,
+   "AP15": 8.2668,
+   "AP25": 5.3721,
+   "AP50": 1.083,
+   "recall": 0.009134,
+   "avg_tp_iou3d": 0.576585,
+   "matches": 755,
+   "total_gts": 82656
+  },
+  "detany3d_nuScenes_greedy": {
+   "mAP3D": 12.8336,
+   "AP15": 16.9498,
+   "AP25": 13.489,
+   "AP50": 5.3832,
+   "recall": 0.281147,
+   "avg_tp_iou3d": 0.466225,
+   "matches": 16232,
+   "total_gts": 57735,
+   "model": "detany3d",
+   "dataset": "nuScenes"
+  },
+  "detany3d_nuScenes_hungarian": {
+   "mAP3D": 12.8336,
+   "AP15": 16.9498,
+   "AP25": 13.489,
+   "AP50": 5.3832,
+   "recall": 0.281043,
+   "avg_tp_iou3d": 0.467196,
+   "matches": 16226,
+   "total_gts": 57735,
+   "model": "detany3d",
+   "dataset": "nuScenes"
+  },
+  "imov3d-SC_ARKitScenes_greedy": {
+   "mAP3D": NaN,
+   "AP15": NaN,
+   "AP25": NaN,
+   "AP50": NaN,
+   "recall": 0.225002,
+   "avg_tp_iou3d": 0.227937,
+   "matches": 12691,
+   "total_gts": 56404,
+   "model": "imov3d-SC",
+   "dataset": "ARKitScenes"
+  },
+  "imov3d-SC_ARKitScenes_hungarian": {
+   "mAP3D": NaN,
+   "AP15": NaN,
+   "AP25": NaN,
+   "AP50": NaN,
+   "recall": 0.224647,
+   "avg_tp_iou3d": 0.2572,
+   "matches": 12671,
+   "total_gts": 56404,
+   "model": "imov3d-SC",
+   "dataset": "ARKitScenes"
+  },
+  "imov3d-SC_Hypersim_hungarian": {
+   "mAP3D": 0.0,
+   "AP15": 0.0001,
+   "AP25": 0.0001,
+   "AP50": 0.0,
+   "recall": 0.060299,
+   "avg_tp_iou3d": 0.230852,
+   "matches": 14431,
+   "total_gts": 239324,
+   "model": "imov3d-SC",
+   "dataset": "Hypersim"
+  },
+  "imov3d-SC_SUNRGBD_greedy": {
+   "mAP3D": 0.0029,
+   "AP15": 0.0005,
+   "AP25": 0.0002,
+   "AP50": 0.0,
+   "recall": 0.447277,
+   "avg_tp_iou3d": 0.24498,
+   "matches": 16789,
+   "total_gts": 37536,
+   "model": "imov3d-SC",
+   "dataset": "SUNRGBD"
+  },
+  "imov3d-SC_SUNRGBD_hungarian": {
+   "mAP3D": 0.0029,
+   "AP15": 0.0005,
+   "AP25": 0.0002,
+   "AP50": 0.0,
+   "recall": 0.448636,
+   "avg_tp_iou3d": 0.272088,
+   "matches": 16840,
+   "total_gts": 37536,
+   "model": "imov3d-SC",
+   "dataset": "SUNRGBD"
+  },
+  "imov3d-SC_ScanNet_greedy": {
+   "mAP3D": 0.0102,
+   "AP15": 0.0123,
+   "AP25": 0.0031,
+   "AP50": 0.0,
+   "recall": 0.174881,
+   "avg_tp_iou3d": 0.244892,
+   "matches": 14455,
+   "total_gts": 82656,
+   "model": "imov3d-SC",
+   "dataset": "ScanNet"
+  },
+  "imov3d-SC_ScanNet_hungarian": {
+   "mAP3D": 0.0102,
+   "AP15": 0.0123,
+   "AP25": 0.0031,
+   "AP50": 0.0,
+   "recall": 0.174978,
+   "avg_tp_iou3d": 0.274367,
+   "matches": 14463,
+   "total_gts": 82656,
+   "model": "imov3d-SC",
+   "dataset": "ScanNet"
+  },
+  "imov3d-SU_ARKitScenes_greedy": {
+   "mAP3D": NaN,
+   "AP15": NaN,
+   "AP25": NaN,
+   "AP50": NaN,
+   "recall": 0.234558,
+   "avg_tp_iou3d": 0.242971,
+   "matches": 13230,
+   "total_gts": 56404,
+   "model": "imov3d-SU",
+   "dataset": "ARKitScenes"
+  },
+  "imov3d-SU_ARKitScenes_hungarian": {
+   "mAP3D": NaN,
+   "AP15": NaN,
+   "AP25": NaN,
+   "AP50": NaN,
+   "recall": 0.234806,
+   "avg_tp_iou3d": 0.268061,
+   "matches": 13244,
+   "total_gts": 56404,
+   "model": "imov3d-SU",
+   "dataset": "ARKitScenes"
+  },
+  "imov3d-SU_Hypersim_hungarian": {
+   "mAP3D": 0.0,
+   "AP15": 0.0,
+   "AP25": 0.0,
+   "AP50": 0.0,
+   "recall": 0.058515,
+   "avg_tp_iou3d": 0.239188,
+   "matches": 14004,
+   "total_gts": 239324,
+   "model": "imov3d-SU",
+   "dataset": "Hypersim"
+  },
+  "imov3d-SU_SUNRGBD_greedy": {
+   "mAP3D": 0.0004,
+   "AP15": 0.0001,
+   "AP25": 0.0,
+   "AP50": 0.0,
+   "recall": 0.487266,
+   "avg_tp_iou3d": 0.264262,
+   "matches": 18290,
+   "total_gts": 37536,
+   "model": "imov3d-SU",
+   "dataset": "SUNRGBD"
+  },
+  "imov3d-SU_SUNRGBD_hungarian": {
+   "mAP3D": 0.0004,
+   "AP15": 0.0001,
+   "AP25": 0.0,
+   "AP50": 0.0,
+   "recall": 0.489503,
+   "avg_tp_iou3d": 0.288142,
+   "matches": 18374,
+   "total_gts": 37536,
+   "model": "imov3d-SU",
+   "dataset": "SUNRGBD"
+  },
+  "imov3d-SU_ScanNet_greedy": {
+   "mAP3D": 0.0195,
+   "AP15": 0.0305,
+   "AP25": 0.0102,
+   "AP50": 0.0002,
+   "recall": 0.185964,
+   "avg_tp_iou3d": 0.263423,
+   "matches": 15371,
+   "total_gts": 82656,
+   "model": "imov3d-SU",
+   "dataset": "ScanNet"
+  },
+  "imov3d-SU_ScanNet_hungarian": {
+   "mAP3D": 0.0195,
+   "AP15": 0.0305,
+   "AP25": 0.0102,
+   "AP50": 0.0002,
+   "recall": 0.186205,
+   "avg_tp_iou3d": 0.288549,
+   "matches": 15391,
+   "total_gts": 82656,
+   "model": "imov3d-SU",
+   "dataset": "ScanNet"
+  },
+  "ov3det-SC_ARKitScenes_greedy": {
+   "mAP3D": NaN,
+   "AP15": NaN,
+   "AP25": NaN,
+   "AP50": NaN,
+   "recall": 0.179934,
+   "avg_tp_iou3d": 0.23298,
+   "matches": 10149,
+   "total_gts": 56404,
+   "model": "ov3det-SC",
+   "dataset": "ARKitScenes"
+  },
+  "ov3det-SC_ARKitScenes_hungarian": {
+   "mAP3D": NaN,
+   "AP15": NaN,
+   "AP25": NaN,
+   "AP50": NaN,
+   "recall": 0.179845,
+   "avg_tp_iou3d": 0.253764,
+   "matches": 10144,
+   "total_gts": 56404,
+   "model": "ov3det-SC",
+   "dataset": "ARKitScenes"
+  },
+  "ov3det-SC_Hypersim_greedy": {
+   "mAP3D": 0.0,
+   "AP15": 0.0,
+   "AP25": 0.0,
+   "AP50": 0.0,
+   "recall": 0.028334,
+   "avg_tp_iou3d": 0.222671,
+   "matches": 6781,
+   "total_gts": 239324,
+   "model": "ov3det-SC",
+   "dataset": "Hypersim"
+  },
+  "ov3det-SC_Hypersim_hungarian": {
+   "mAP3D": 0.0,
+   "AP15": 0.0,
+   "AP25": 0.0,
+   "AP50": 0.0,
+   "recall": 0.028196,
+   "avg_tp_iou3d": 0.239442,
+   "matches": 6748,
+   "total_gts": 239324,
+   "model": "ov3det-SC",
+   "dataset": "Hypersim"
+  },
+  "ov3det-SC_SUNRGBD_greedy": {
+   "mAP3D": 0.0005,
+   "AP15": 0.0013,
+   "AP25": 0.0002,
+   "AP50": 0.0,
+   "recall": 0.351023,
+   "avg_tp_iou3d": 0.239636,
+   "matches": 13176,
+   "total_gts": 37536,
+   "model": "ov3det-SC",
+   "dataset": "SUNRGBD"
+  },
+  "ov3det-SC_SUNRGBD_hungarian": {
+   "mAP3D": 0.0005,
+   "AP15": 0.0013,
+   "AP25": 0.0002,
+   "AP50": 0.0,
+   "recall": 0.35025,
+   "avg_tp_iou3d": 0.262422,
+   "matches": 13147,
+   "total_gts": 37536,
+   "model": "ov3det-SC",
+   "dataset": "SUNRGBD"
+  },
+  "ov3det-SC_ScanNet_greedy": {
+   "mAP3D": 0.0202,
+   "AP15": 0.0338,
+   "AP25": 0.0134,
+   "AP50": 0.0005,
+   "recall": 0.145579,
+   "avg_tp_iou3d": 0.244448,
+   "matches": 12033,
+   "total_gts": 82656,
+   "model": "ov3det-SC",
+   "dataset": "ScanNet"
+  },
+  "ov3det-SC_ScanNet_hungarian": {
+   "mAP3D": 0.0202,
+   "AP15": 0.0338,
+   "AP25": 0.0134,
+   "AP50": 0.0005,
+   "recall": 0.145482,
+   "avg_tp_iou3d": 0.267511,
+   "matches": 12025,
+   "total_gts": 82656,
+   "model": "ov3det-SC",
+   "dataset": "ScanNet"
+  },
+  "ov3det-SU_ARKitScenes_greedy": {
+   "mAP3D": NaN,
+   "AP15": NaN,
+   "AP25": NaN,
+   "AP50": NaN,
+   "recall": 0.236739,
+   "avg_tp_iou3d": 0.231481,
+   "matches": 13353,
+   "total_gts": 56404,
+   "model": "ov3det-SU",
+   "dataset": "ARKitScenes"
+  },
+  "ov3det-SU_ARKitScenes_hungarian": {
+   "mAP3D": NaN,
+   "AP15": NaN,
+   "AP25": NaN,
+   "AP50": NaN,
+   "recall": 0.236544,
+   "avg_tp_iou3d": 0.262827,
+   "matches": 13342,
+   "total_gts": 56404,
+   "model": "ov3det-SU",
+   "dataset": "ARKitScenes"
+  },
+  "ov3det-SU_Hypersim_greedy": {
+   "mAP3D": 0.0,
+   "AP15": 0.0,
+   "AP25": 0.0,
+   "AP50": 0.0,
+   "recall": 0.0459,
+   "avg_tp_iou3d": 0.226798,
+   "matches": 10985,
+   "total_gts": 239324,
+   "model": "ov3det-SU",
+   "dataset": "Hypersim"
+  },
+  "ov3det-SU_Hypersim_hungarian": {
+   "mAP3D": 0.0,
+   "AP15": 0.0,
+   "AP25": 0.0,
+   "AP50": 0.0,
+   "recall": 0.045771,
+   "avg_tp_iou3d": 0.240357,
+   "matches": 10954,
+   "total_gts": 239324,
+   "model": "ov3det-SU",
+   "dataset": "Hypersim"
+  },
+  "ov3det-SU_SUNRGBD_greedy": {
+   "mAP3D": 0.0063,
+   "AP15": 0.0124,
+   "AP25": 0.0121,
+   "AP50": 0.0,
+   "recall": 0.403959,
+   "avg_tp_iou3d": 0.245345,
+   "matches": 15163,
+   "total_gts": 37536,
+   "model": "ov3det-SU",
+   "dataset": "SUNRGBD"
+  },
+  "ov3det-SU_SUNRGBD_hungarian": {
+   "mAP3D": 0.0063,
+   "AP15": 0.0124,
+   "AP25": 0.0121,
+   "AP50": 0.0,
+   "recall": 0.403426,
+   "avg_tp_iou3d": 0.278018,
+   "matches": 15143,
+   "total_gts": 37536,
+   "model": "ov3det-SU",
+   "dataset": "SUNRGBD"
+  },
+  "ov3det-SU_ScanNet_greedy": {
+   "mAP3D": 0.0105,
+   "AP15": 0.0154,
+   "AP25": 0.0072,
+   "AP50": 0.0,
+   "recall": 0.16334,
+   "avg_tp_iou3d": 0.242534,
+   "matches": 13501,
+   "total_gts": 82656,
+   "model": "ov3det-SU",
+   "dataset": "ScanNet"
+  },
+  "ov3det-SU_ScanNet_hungarian": {
+   "mAP3D": 0.0105,
+   "AP15": 0.0154,
+   "AP25": 0.0072,
+   "AP50": 0.0,
+   "recall": 0.163219,
+   "avg_tp_iou3d": 0.277471,
+   "matches": 13491,
+   "total_gts": 82656,
+   "model": "ov3det-SU",
+   "dataset": "ScanNet"
+  },
+  "ovm3ddet-AR_ARKitScenes_greedy": {
+   "mAP3D": NaN,
+   "AP15": NaN,
+   "AP25": NaN,
+   "AP50": NaN,
+   "recall": 0.296699,
+   "avg_tp_iou3d": 0.305187,
+   "matches": 16735,
+   "total_gts": 56404,
+   "model": "ovm3ddet-AR",
+   "dataset": "ARKitScenes"
+  },
+  "ovm3ddet-AR_ARKitScenes_hungarian": {
+   "mAP3D": NaN,
+   "AP15": NaN,
+   "AP25": NaN,
+   "AP50": NaN,
+   "recall": 0.298029,
+   "avg_tp_iou3d": 0.340011,
+   "matches": 16810,
+   "total_gts": 56404,
+   "model": "ovm3ddet-AR",
+   "dataset": "ARKitScenes"
+  },
+  "ovm3ddet-AR_Hypersim_greedy": {
+   "mAP3D": 0.0001,
+   "AP15": 0.0,
+   "AP25": 0.0,
+   "AP50": 0.0,
+   "recall": 0.062363,
+   "avg_tp_iou3d": 0.261671,
+   "matches": 14925,
+   "total_gts": 239324,
+   "model": "ovm3ddet-AR",
+   "dataset": "Hypersim"
+  },
+  "ovm3ddet-AR_Hypersim_hungarian": {
+   "mAP3D": 0.0001,
+   "AP15": 0.0,
+   "AP25": 0.0,
+   "AP50": 0.0,
+   "recall": 0.062263,
+   "avg_tp_iou3d": 0.293326,
+   "matches": 14901,
+   "total_gts": 239324,
+   "model": "ovm3ddet-AR",
+   "dataset": "Hypersim"
+  },
+  "ovm3ddet-AR_SUNRGBD_greedy": {
+   "mAP3D": 0.0002,
+   "AP15": 0.0001,
+   "AP25": 0.0001,
+   "AP50": 0.0,
+   "recall": 0.449249,
+   "avg_tp_iou3d": 0.321827,
+   "matches": 16863,
+   "total_gts": 37536,
+   "model": "ovm3ddet-AR",
+   "dataset": "SUNRGBD"
+  },
+  "ovm3ddet-AR_SUNRGBD_hungarian": {
+   "mAP3D": 0.0002,
+   "AP15": 0.0001,
+   "AP25": 0.0001,
+   "AP50": 0.0,
+   "recall": 0.449808,
+   "avg_tp_iou3d": 0.36211,
+   "matches": 16884,
+   "total_gts": 37536,
+   "model": "ovm3ddet-AR",
+   "dataset": "SUNRGBD"
+  },
+  "ovm3ddet-AR_ScanNet_greedy": {
+   "mAP3D": 0.0366,
+   "AP15": 0.0596,
+   "AP25": 0.019,
+   "AP50": 0.0027,
+   "recall": 0.156262,
+   "avg_tp_iou3d": 0.281988,
+   "matches": 12916,
+   "total_gts": 82656,
+   "model": "ovm3ddet-AR",
+   "dataset": "ScanNet"
+  },
+  "ovm3ddet-AR_ScanNet_hungarian": {
+   "mAP3D": 0.0366,
+   "AP15": 0.0596,
+   "AP25": 0.019,
+   "AP50": 0.0027,
+   "recall": 0.156153,
+   "avg_tp_iou3d": 0.321253,
+   "matches": 12907,
+   "total_gts": 82656,
+   "model": "ovm3ddet-AR",
+   "dataset": "ScanNet"
+  },
+  "ovm3ddet-SU_ARKitScenes_greedy": {
+   "mAP3D": 0.0,
+   "AP15": 0.0,
+   "AP25": 0.0,
+   "AP50": 0.0,
+   "recall": 0.272357,
+   "avg_tp_iou3d": 0.257812,
+   "matches": 15362,
+   "total_gts": 56404,
+   "model": "ovm3ddet-SU",
+   "dataset": "ARKitScenes"
+  },
+  "ovm3ddet-SU_ARKitScenes_hungarian": {
+   "mAP3D": 0.0,
+   "AP15": 0.0,
+   "AP25": 0.0,
+   "AP50": 0.0,
+   "recall": 0.272481,
+   "avg_tp_iou3d": 0.310963,
+   "matches": 15369,
+   "total_gts": 56404,
+   "model": "ovm3ddet-SU",
+   "dataset": "ARKitScenes"
+  },
+  "ovm3ddet-SU_Hypersim_greedy": {
+   "mAP3D": 0.0,
+   "AP15": 0.0,
+   "AP25": 0.0,
+   "AP50": 0.0,
+   "recall": 0.079524,
+   "avg_tp_iou3d": 0.254229,
+   "matches": 19032,
+   "total_gts": 239324,
+   "model": "ovm3ddet-SU",
+   "dataset": "Hypersim"
+  },
+  "ovm3ddet-SU_Hypersim_hungarian": {
+   "mAP3D": 0.0,
+   "AP15": 0.0,
+   "AP25": 0.0,
+   "AP50": 0.0,
+   "recall": 0.079478,
+   "avg_tp_iou3d": 0.282909,
+   "matches": 19021,
+   "total_gts": 239324,
+   "model": "ovm3ddet-SU",
+   "dataset": "Hypersim"
+  },
+  "ovm3ddet-SU_SUNRGBD_greedy": {
+   "mAP3D": 0.0003,
+   "AP15": 0.0005,
+   "AP25": 0.0,
+   "AP50": 0.0,
+   "recall": 0.582028,
+   "avg_tp_iou3d": 0.32572,
+   "matches": 21847,
+   "total_gts": 37536,
+   "model": "ovm3ddet-SU",
+   "dataset": "SUNRGBD"
+  },
+  "ovm3ddet-SU_SUNRGBD_hungarian": {
+   "mAP3D": 0.0003,
+   "AP15": 0.0005,
+   "AP25": 0.0,
+   "AP50": 0.0,
+   "recall": 0.582774,
+   "avg_tp_iou3d": 0.37184,
+   "matches": 21875,
+   "total_gts": 37536,
+   "model": "ovm3ddet-SU",
+   "dataset": "SUNRGBD"
+  },
+  "ovm3ddet-SU_ScanNet_greedy": {
+   "mAP3D": 0.0173,
+   "AP15": 0.0274,
+   "AP25": 0.0113,
+   "AP50": 0.0002,
+   "recall": 0.178959,
+   "avg_tp_iou3d": 0.266759,
+   "matches": 14792,
+   "total_gts": 82656,
+   "model": "ovm3ddet-SU",
+   "dataset": "ScanNet"
+  },
+  "ovm3ddet-SU_ScanNet_hungarian": {
+   "mAP3D": 0.0173,
+   "AP15": 0.0274,
+   "AP25": 0.0113,
+   "AP50": 0.0002,
+   "recall": 0.178765,
+   "avg_tp_iou3d": 0.311087,
+   "matches": 14776,
+   "total_gts": 82656,
+   "model": "ovm3ddet-SU",
+   "dataset": "ScanNet"
+  },
+  "ovmono3d_ARKitScenes_greedy": {
+   "mAP3D": 28.3086,
+   "AP15": 36.9291,
+   "AP25": 30.3924,
+   "AP50": 12.4332,
+   "recall": 0.387561,
+   "avg_tp_iou3d": 0.356157,
+   "matches": 21860,
+   "total_gts": 56404,
+   "model": "ovmono3d",
+   "dataset": "ARKitScenes"
+  },
+  "ovmono3d_ARKitScenes_hungarian": {
+   "mAP3D": 28.3086,
+   "AP15": 36.9291,
+   "AP25": 30.3924,
+   "AP50": 12.4332,
+   "recall": 0.388483,
+   "avg_tp_iou3d": 0.409379,
+   "matches": 21912,
+   "total_gts": 56404,
+   "model": "ovmono3d",
+   "dataset": "ARKitScenes"
+  },
+  "ovmono3d_AV2_greedy": {
+   "mAP3D": 2.2632,
+   "AP15": 2.7248,
+   "AP25": 2.6111,
+   "AP50": 0.7917,
+   "recall": 0.278914,
+   "avg_tp_iou3d": 0.343206,
+   "matches": 8894,
+   "total_gts": 31888,
+   "model": "ovmono3d",
+   "dataset": "AV2"
+  },
+  "ovmono3d_AV2_hungarian": {
+   "mAP3D": 2.2632,
+   "AP15": 2.7248,
+   "AP25": 2.6111,
+   "AP50": 0.7917,
+   "recall": 0.278882,
+   "avg_tp_iou3d": 0.379289,
+   "matches": 8893,
+   "total_gts": 31888,
+   "model": "ovmono3d",
+   "dataset": "AV2"
+  },
+  "ovmono3d_Hypersim_hungarian": {
+   "mAP3D": 6.9475,
+   "AP15": 10.0402,
+   "AP25": 7.6282,
+   "AP50": 1.2215,
+   "recall": 0.129038,
+   "avg_tp_iou3d": 0.319716,
+   "matches": 30882,
+   "total_gts": 239324,
+   "model": "ovmono3d",
+   "dataset": "Hypersim"
+  },
+  "ovmono3d_KITTI_greedy": {
+   "mAP3D": 15.9572,
+   "AP15": 21.6914,
+   "AP25": 16.506,
+   "AP50": 6.3774,
+   "recall": 0.729026,
+   "avg_tp_iou3d": 0.444193,
+   "matches": 14590,
+   "total_gts": 20013,
+   "model": "ovmono3d",
+   "dataset": "KITTI"
+  },
+  "ovmono3d_KITTI_hungarian": {
+   "mAP3D": 15.9572,
+   "AP15": 21.6914,
+   "AP25": 16.506,
+   "AP50": 6.3774,
+   "recall": 0.728876,
+   "avg_tp_iou3d": 0.481022,
+   "matches": 14587,
+   "total_gts": 20013,
+   "model": "ovmono3d",
+   "dataset": "KITTI"
+  },
+  "ovmono3d_SUNRGBD_greedy": {
+   "mAP3D": 7.1757,
+   "AP15": 10.4798,
+   "AP25": 7.0548,
+   "AP50": 1.8223,
+   "recall": 0.584958,
+   "avg_tp_iou3d": 0.369593,
+   "matches": 21957,
+   "total_gts": 37536,
+   "model": "ovmono3d",
+   "dataset": "SUNRGBD"
+  },
+  "ovmono3d_SUNRGBD_hungarian": {
+   "mAP3D": 7.1757,
+   "AP15": 10.4798,
+   "AP25": 7.0548,
+   "AP50": 1.8223,
+   "recall": 0.585704,
+   "avg_tp_iou3d": 0.40833,
+   "matches": 21985,
+   "total_gts": 37536,
+   "model": "ovmono3d",
+   "dataset": "SUNRGBD"
+  },
+  "ovmono3d_ScanNet_hungarian": {
+   "mAP3D": 2.4406,
+   "AP15": 3.6211,
+   "AP25": 2.2995,
+   "AP50": 0.4597,
+   "recall": 0.218193,
+   "avg_tp_iou3d": 0.359269,
+   "matches": 18035,
+   "total_gts": 82656,
+   "model": "ovmono3d",
+   "dataset": "ScanNet"
+  },
+  "ovmono3d_nuScenes_greedy": {
+   "mAP3D": 13.8133,
+   "AP15": 17.7599,
+   "AP25": 14.0677,
+   "AP50": 7.1165,
+   "recall": 0.39612,
+   "avg_tp_iou3d": 0.401698,
+   "matches": 22870,
+   "total_gts": 57735,
+   "model": "ovmono3d",
+   "dataset": "nuScenes"
+  },
+  "ovmono3d_nuScenes_hungarian": {
+   "mAP3D": 13.8133,
+   "AP15": 17.7599,
+   "AP25": 14.0677,
+   "AP50": 7.1165,
+   "recall": 0.396241,
+   "avg_tp_iou3d": 0.429817,
+   "matches": 22877,
+   "total_gts": 57735,
+   "model": "ovmono3d",
+   "dataset": "nuScenes"
+  },
+  "wilddet3d_ARKitScenes_greedy": {
+   "mAP3D": 15.1419,
+   "AP15": 26.5667,
+   "AP25": 16.6037,
+   "AP50": 1.0239,
+   "recall": 0.321059,
+   "avg_tp_iou3d": 0.340604,
+   "matches": 18109,
+   "total_gts": 56404,
+   "model": "wilddet3d",
+   "dataset": "ARKitScenes"
+  },
+  "wilddet3d_ARKitScenes_hungarian": {
+   "mAP3D": 15.1419,
+   "AP15": 26.5667,
+   "AP25": 16.6037,
+   "AP50": 1.0239,
+   "recall": 0.323328,
+   "avg_tp_iou3d": 0.385241,
+   "matches": 18237,
+   "total_gts": 56404,
+   "model": "wilddet3d",
+   "dataset": "ARKitScenes"
+  },
+  "wilddet3d_AV2_greedy": {
+   "mAP3D": 2.4796,
+   "AP15": 6.0622,
+   "AP25": 1.8636,
+   "AP50": 0.0048,
+   "recall": 0.324354,
+   "avg_tp_iou3d": 0.304737,
+   "matches": 10343,
+   "total_gts": 31888,
+   "model": "wilddet3d",
+   "dataset": "AV2"
+  },
+  "wilddet3d_AV2_hungarian": {
+   "mAP3D": 2.4796,
+   "AP15": 6.0622,
+   "AP25": 1.8636,
+   "AP50": 0.0048,
+   "recall": 0.326016,
+   "avg_tp_iou3d": 0.350549,
+   "matches": 10396,
+   "total_gts": 31888,
+   "model": "wilddet3d",
+   "dataset": "AV2"
+  },
+  "wilddet3d_Hypersim_greedy": {
+   "mAP3D": 4.4537,
+   "AP15": 7.4583,
+   "AP25": 4.1526,
+   "AP50": 0.417,
+   "recall": 0.117393,
+   "avg_tp_iou3d": 0.371257,
+   "matches": 28095,
+   "total_gts": 239324,
+   "model": "wilddet3d",
+   "dataset": "Hypersim"
+  },
+  "wilddet3d_Hypersim_hungarian": {
+   "mAP3D": 4.4537,
+   "AP15": 7.4583,
+   "AP25": 4.1526,
+   "AP50": 0.417,
+   "recall": 0.116984,
+   "avg_tp_iou3d": 0.408978,
+   "matches": 27997,
+   "total_gts": 239324,
+   "model": "wilddet3d",
+   "dataset": "Hypersim"
+  },
+  "wilddet3d_KITTI_greedy": {
+   "mAP3D": 12.7823,
+   "AP15": 22.7943,
+   "AP25": 11.469,
+   "AP50": 0.89,
+   "recall": 0.594913,
+   "avg_tp_iou3d": 0.344478,
+   "matches": 11906,
+   "total_gts": 20013,
+   "model": "wilddet3d",
+   "dataset": "KITTI"
+  },
+  "wilddet3d_KITTI_hungarian": {
+   "mAP3D": 12.7823,
+   "AP15": 22.7943,
+   "AP25": 11.469,
+   "AP50": 0.89,
+   "recall": 0.596712,
+   "avg_tp_iou3d": 0.355497,
+   "matches": 11942,
+   "total_gts": 20013,
+   "model": "wilddet3d",
+   "dataset": "KITTI"
+  },
+  "wilddet3d_SUNRGBD_greedy": {
+   "mAP3D": 3.8722,
+   "AP15": 6.7422,
+   "AP25": 3.7522,
+   "AP50": 0.2412,
+   "recall": 0.637148,
+   "avg_tp_iou3d": 0.337369,
+   "matches": 23916,
+   "total_gts": 37536,
+   "model": "wilddet3d",
+   "dataset": "SUNRGBD"
+  },
+  "wilddet3d_SUNRGBD_hungarian": {
+   "mAP3D": 3.8722,
+   "AP15": 6.7422,
+   "AP25": 3.7522,
+   "AP50": 0.2412,
+   "recall": 0.640212,
+   "avg_tp_iou3d": 0.444535,
+   "matches": 24031,
+   "total_gts": 37536,
+   "model": "wilddet3d",
+   "dataset": "SUNRGBD"
+  },
+  "wilddet3d_ScanNet_greedy": {
+   "mAP3D": 1.6008,
+   "AP15": 2.703,
+   "AP25": 1.3638,
+   "AP50": 0.1279,
+   "recall": 0.392555,
+   "avg_tp_iou3d": 0.342144,
+   "matches": 32447,
+   "total_gts": 82656,
+   "model": "wilddet3d",
+   "dataset": "ScanNet"
+  },
+  "wilddet3d_ScanNet_hungarian": {
+   "mAP3D": 1.6008,
+   "AP15": 2.703,
+   "AP25": 1.3638,
+   "AP50": 0.1279,
+   "recall": 0.388998,
+   "avg_tp_iou3d": 0.485369,
+   "matches": 32153,
+   "total_gts": 82656,
+   "model": "wilddet3d",
+   "dataset": "ScanNet"
+  },
+  "wilddet3d_nuScenes_greedy": {
+   "mAP3D": 12.4368,
+   "AP15": 20.7347,
+   "AP25": 12.5575,
+   "AP50": 1.5732,
+   "recall": 0.302572,
+   "avg_tp_iou3d": 0.350884,
+   "matches": 17469,
+   "total_gts": 57735,
+   "model": "wilddet3d",
+   "dataset": "nuScenes"
+  },
+  "wilddet3d_nuScenes_hungarian": {
+   "mAP3D": 12.4368,
+   "AP15": 20.7347,
+   "AP25": 12.5575,
+   "AP50": 1.5732,
+   "recall": 0.303507,
+   "avg_tp_iou3d": 0.358567,
+   "matches": 17523,
+   "total_gts": 57735,
+   "model": "wilddet3d",
+   "dataset": "nuScenes"
+  }
+ },
+ "vocab_subset": {
+  "vocabsubset_detany3d_SUNRGBD": {
+   "full_vocab_mAP3D": 8.8104,
+   "n_categories_with_gt": 82,
+   "subsets": [
+    {
+     "k": 5,
+     "random_mean": 8.7535,
+     "random_std": 5.659,
+     "adverse": 0.0,
+     "favourable": 48.5208
+    },
+    {
+     "k": 10,
+     "random_mean": 8.7184,
+     "random_std": 3.862,
+     "adverse": 0.0,
+     "favourable": 38.9094
+    },
+    {
+     "k": 20,
+     "random_mean": 8.8269,
+     "random_std": 2.5752,
+     "adverse": 0.1236,
+     "favourable": 28.0415
+    },
+    {
+     "k": 40,
+     "random_mean": 8.8008,
+     "random_std": 1.4853,
+     "adverse": 0.8355,
+     "favourable": 17.0874
+    }
+   ]
+  },
+  "vocabsubset_detany3d_ScanNet": {
+   "full_vocab_mAP3D": 2.8853,
+   "n_categories_with_gt": 174,
+   "subsets": [
+    {
+     "k": 5,
+     "random_mean": 2.8314,
+     "random_std": 2.4667,
+     "adverse": 0.0,
+     "favourable": 28.1102
+    },
+    {
+     "k": 10,
+     "random_mean": 2.8801,
+     "random_std": 1.7257,
+     "adverse": 0.0,
+     "favourable": 22.2222
+    },
+    {
+     "k": 20,
+     "random_mean": 2.8651,
+     "random_std": 1.2059,
+     "adverse": 0.0,
+     "favourable": 15.8608
+    },
+    {
+     "k": 40,
+     "random_mean": 2.9037,
+     "random_std": 0.7918,
+     "adverse": 0.0,
+     "favourable": 10.5859
+    }
+   ]
+  },
+  "vocabsubset_ovmono3d_SUNRGBD": {
+   "full_vocab_mAP3D": 7.1757,
+   "n_categories_with_gt": 82,
+   "subsets": [
+    {
+     "k": 5,
+     "random_mean": 7.1731,
+     "random_std": 5.7085,
+     "adverse": 0.0,
+     "favourable": 49.1507
+    },
+    {
+     "k": 10,
+     "random_mean": 7.1455,
+     "random_std": 3.8975,
+     "adverse": 0.0015,
+     "favourable": 37.9059
+    },
+    {
+     "k": 20,
+     "random_mean": 7.1818,
+     "random_std": 2.5698,
+     "adverse": 0.107,
+     "favourable": 24.6808
+    },
+    {
+     "k": 40,
+     "random_mean": 7.1626,
+     "random_std": 1.4915,
+     "adverse": 0.5209,
+     "favourable": 14.1096
+    }
+   ]
+  },
+  "vocabsubset_ovmono3d_ScanNet": {
+   "full_vocab_mAP3D": 2.4406,
+   "n_categories_with_gt": 174,
+   "subsets": [
+    {
+     "k": 5,
+     "random_mean": 2.4297,
+     "random_std": 2.4551,
+     "adverse": 0.0,
+     "favourable": 27.95
+    },
+    {
+     "k": 10,
+     "random_mean": 2.4222,
+     "random_std": 1.6786,
+     "adverse": 0.0,
+     "favourable": 21.2337
+    },
+    {
+     "k": 20,
+     "random_mean": 2.416,
+     "random_std": 1.1655,
+     "adverse": 0.0,
+     "favourable": 14.3582
+    },
+    {
+     "k": 40,
+     "random_mean": 2.4541,
+     "random_std": 0.7792,
+     "adverse": 0.0,
+     "favourable": 9.3401
+    }
+   ]
+  }
+ },
+ "templates": {
+  "templates_clip_ARKitScenes": {
+   "per_group_mAP3D": {
+    "underdetailed": 19.1083,
+    "standard": 21.0166,
+    "overdetailed": 19.4759
+   },
+   "per_group_std": {
+    "underdetailed": 0.5566,
+    "standard": 0.2419,
+    "overdetailed": 1.0005
+   }
+  },
+  "templates_clip_KITTI": {
+   "per_group_mAP3D": {
+    "underdetailed": 14.8165,
+    "standard": 10.6894,
+    "overdetailed": 12.355
+   },
+   "per_group_std": {
+    "underdetailed": 1.4772,
+    "standard": 0.5001,
+    "overdetailed": 2.1898
+   }
+  },
+  "templates_predset_cubercnn_ARKitScenes": {
+   "n_templates": 3,
+   "mean_mAP3D": 19.448,
+   "std_mAP3D": 1.3095
+  },
+  "templates_predset_cubercnn_AV2": {
+   "n_templates": 5,
+   "mean_mAP3D": 10.6374,
+   "std_mAP3D": 0.9003
+  },
+  "templates_predset_cubercnn_Hypersim": {
+   "n_templates": 5,
+   "mean_mAP3D": 4.2915,
+   "std_mAP3D": 0.7297
+  },
+  "templates_predset_cubercnn_KITTI": {
+   "n_templates": 5,
+   "mean_mAP3D": 16.8763,
+   "std_mAP3D": 3.6642
+  },
+  "templates_predset_cubercnn_SUNRGBD": {
+   "n_templates": 5,
+   "mean_mAP3D": 5.5109,
+   "std_mAP3D": 0.6729
+  },
+  "templates_predset_cubercnn_ScanNet": {
+   "n_templates": 5,
+   "mean_mAP3D": 2.0337,
+   "std_mAP3D": 0.5217
+  },
+  "templates_predset_cubercnn_nuScenes": {
+   "n_templates": 5,
+   "mean_mAP3D": 16.6657,
+   "std_mAP3D": 0.9884
+  },
+  "templates_predset_detany3d_ARKitScenes": {
+   "n_templates": 5,
+   "mean_mAP3D": 3.0619,
+   "std_mAP3D": 2.0263
+  },
+  "templates_predset_detany3d_AV2": {
+   "n_templates": 5,
+   "mean_mAP3D": 0.0178,
+   "std_mAP3D": 0.0342
+  },
+  "templates_predset_detany3d_Hypersim": {
+   "n_templates": 5,
+   "mean_mAP3D": 0.8016,
+   "std_mAP3D": 0.5784
+  },
+  "templates_predset_detany3d_KITTI": {
+   "n_templates": 5,
+   "mean_mAP3D": 3.3031,
+   "std_mAP3D": 2.388
+  },
+  "templates_predset_detany3d_SUNRGBD": {
+   "n_templates": 5,
+   "mean_mAP3D": 1.9547,
+   "std_mAP3D": 1.0568
+  },
+  "templates_predset_detany3d_ScanNet": {
+   "n_templates": 5,
+   "mean_mAP3D": 0.2932,
+   "std_mAP3D": 0.2494
+  },
+  "templates_predset_detany3d_nuScenes": {
+   "n_templates": 5,
+   "mean_mAP3D": 2.4422,
+   "std_mAP3D": 1.5445
+  },
+  "templates_predset_imov3d_SUNRGBD": {
+   "n_templates": 5,
+   "mean_mAP3D": 1.6354,
+   "std_mAP3D": 0.0279
+  },
+  "templates_predset_imov3d_ScanNet": {
+   "n_templates": 5,
+   "mean_mAP3D": 0.2704,
+   "std_mAP3D": 0.0076
+  },
+  "templates_predset_ov3det_SUNRGBD": {
+   "n_templates": 5,
+   "mean_mAP3D": 0.2392,
+   "std_mAP3D": 0.0054
+  },
+  "templates_predset_ov3det_ScanNet": {
+   "n_templates": 5,
+   "mean_mAP3D": 0.1122,
+   "std_mAP3D": 0.0096
+  },
+  "templates_predset_ovm3ddet_ARKitScenes": {
+   "n_templates": 5,
+   "mean_mAP3D": 14.7166,
+   "std_mAP3D": 1.2768
+  },
+  "templates_predset_ovm3ddet_KITTI": {
+   "n_templates": 5,
+   "mean_mAP3D": 11.8926,
+   "std_mAP3D": 2.3556
+  },
+  "templates_predset_ovm3ddet_SUNRGBD": {
+   "n_templates": 5,
+   "mean_mAP3D": 4.6404,
+   "std_mAP3D": 0.5188
+  },
+  "templates_predset_ovm3ddet_nuScenes": {
+   "n_templates": 5,
+   "mean_mAP3D": 8.3221,
+   "std_mAP3D": 0.634
+  },
+  "templates_predset_ovmono3d_ARKitScenes": {
+   "n_templates": 5,
+   "mean_mAP3D": 18.9543,
+   "std_mAP3D": 1.8874
+  },
+  "templates_predset_ovmono3d_AV2": {
+   "n_templates": 5,
+   "mean_mAP3D": 2.1749,
+   "std_mAP3D": 0.7249
+  },
+  "templates_predset_ovmono3d_Hypersim": {
+   "n_templates": 5,
+   "mean_mAP3D": 4.0179,
+   "std_mAP3D": 0.4854
+  },
+  "templates_predset_ovmono3d_KITTI": {
+   "n_templates": 5,
+   "mean_mAP3D": 10.6038,
+   "std_mAP3D": 0.4052
+  },
+  "templates_predset_ovmono3d_SUNRGBD": {
+   "n_templates": 5,
+   "mean_mAP3D": 4.0457,
+   "std_mAP3D": 1.1188
+  },
+  "templates_predset_ovmono3d_ScanNet": {
+   "n_templates": 5,
+   "mean_mAP3D": 1.0844,
+   "std_mAP3D": 0.404
+  },
+  "templates_predset_ovmono3d_nuScenes": {
+   "n_templates": 5,
+   "mean_mAP3D": 9.0633,
+   "std_mAP3D": 0.4703
+  },
+  "templates_siglip_ARKitScenes": {
+   "per_group_mAP3D": {
+    "underdetailed": 26.8149,
+    "standard": 27.6841,
+    "overdetailed": 23.3387
+   },
+   "per_group_std": {
+    "underdetailed": 0.901,
+    "standard": 0.6363,
+    "overdetailed": 3.3349
+   }
+  },
+  "templates_siglip_KITTI": {
+   "per_group_mAP3D": {
+    "underdetailed": 19.0262,
+    "standard": 19.3748,
+    "overdetailed": 17.7066
+   },
+   "per_group_std": {
+    "underdetailed": 0.6441,
+    "standard": 0.1991,
+    "overdetailed": 0.8653
+   }
+  }
+ }
+}

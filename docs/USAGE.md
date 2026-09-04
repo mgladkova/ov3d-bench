@@ -159,6 +159,38 @@ from ov3d_bench.remap import remap_predictions, build_class_prototypes
 
 ---
 
+## ✅ Verifying your setup
+
+`results/reference_results.json` holds the scalar metrics this code measured on the
+published predictions. If you have those predictions, running the same command
+should land on the same numbers, which confirms your install, and PyTorch3D in
+particular, behaves as expected.
+
+```bash
+ov3d-bench eval --gt-json AV2_test.json --pred detany3d_AV2.pth \
+                --dataset-name AV2 --class-agnostic --iou3d-min 0.15 --outdir out/
+
+python tools/compare_results.py --results out/results.json --key detany3d_AV2_hungarian
+```
+
+```
+  field               reference        yours      delta
+  mAP3D                  0.8200       0.8200    +0.0000
+  recall                 0.1418       0.1418    +0.0000
+  ...
+  matches the reference within 0.01
+```
+
+`--list` shows every available key. The protocol flags each entry was produced with
+are recorded under `_protocol` in the reference file; comparing against a different
+protocol is the most common reason for a mismatch, followed by a PyTorch3D build
+that does not match your torch version.
+
+If you do not have the published predictions, `pytest tests/test_smoke.py` checks
+the install against a synthetic fixture instead, with no downloads.
+
+---
+
 ## 🧪 Checking a rebuilt dataset
 
 ```bash

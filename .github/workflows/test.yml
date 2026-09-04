@@ -1,0 +1,44 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -el {0}
+    steps:
+      - uses: actions/checkout@v4
+
+      # PyTorch3D supplies the 3D IoU every metric needs and is not on PyPI, so
+      # the environment comes from conda. Runners have no GPU, so the CUDA pin is
+      # dropped; everything under test is CPU-only.
+      - name: Build a CPU environment from environment.yml
+        run: |
+          grep -v 'pytorch-cuda' environment.yml > environment-ci.yml
+          cat environment-ci.yml
+      - uses: conda-incubator/setup-miniconda@v3
+        with:
+          environment-file: environment-ci.yml
+          activate-environment: ov3d-bench
+          auto-activate-base: false
+
+      - name: Show versions
+        run: |
+          python -c "import torch, pytorch3d, numpy; \
+            print('torch', torch.__version__, '| pytorch3d', pytorch3d.__version__, \
+                  '| numpy', numpy.__version__)"
+
+      - name: Install the package and test dependencies
+        run: pip install -e '.[dev]'
+
+      - name: Smoke test
+        run: pytest tests/test_smoke.py -v
+
+      - name: CLI is wired
+        run: ov3d-bench --help

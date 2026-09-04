@@ -27,6 +27,16 @@ against (Python 3.10, torch 2.0.1, CUDA 11.8, PyTorch3D 0.7.4):
 conda env create -f environment.yml && conda activate ov3d-bench
 ```
 
+Check the install:
+
+```bash
+pytest tests/test_smoke.py        # synthetic fixture, no downloads
+```
+
+If you have the published predictions, `tools/compare_results.py` also checks your
+numbers against `results/reference_results.json`. See
+[docs/USAGE.md](docs/USAGE.md#-verifying-your-setup).
+
 ## 🚀 Use
 
 ```bash

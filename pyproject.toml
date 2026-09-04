@@ -38,6 +38,8 @@ remap = ["transformers>=4.40"]
 # Building the evaluation jsons from raw datasets (tools/), never needed to run
 # the benchmark. The av2-api devkit is not on PyPI; see docs/DATA.md.
 data = ["shapely>=2.0", "pyquaternion>=0.9"]
+# Running the test suite.
+dev = ["pytest>=7.0"]
 
 [project.urls]
 Homepage = "https://github.com/mgladkova/ov3d-bench"
