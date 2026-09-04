@@ -2,6 +2,10 @@
 
 Diagnostic benchmark for open-vocabulary monocular 3D object detection.
 
+**[Paper](https://arxiv.org/abs/2608.17110)** · Published at the 7th Workshop on
+Open-World 3D Scene Understanding and Representations
+([OpenSUN3D](https://opensun3d.github.io/)), ECCV, Malmö, Sweden.
+
 A single mAP number hides where a detector actually fails. OV3D-Bench reports
 mAP3D alongside diagnostics that separate the causes: **3D class-agnostic recall**,
 which credits a well-localized box regardless of its predicted label; **confusion
@@ -82,12 +86,20 @@ affect no ranking.
 
 ## 📚 Citation
 
+Presented at the 7th Workshop on Open-World 3D Scene Understanding and
+Representations ([OpenSUN3D](https://opensun3d.github.io/)) at ECCV, Malmö,
+Sweden. Preprint: [arXiv:2608.17110](https://arxiv.org/abs/2608.17110).
+
 ```bibtex
-@article{gladkova2026ov3d,
-  title={OV3D-Bench: A Diagnostic Benchmark for Open-Vocabulary Monocular 3D Detection},
-  author={Gladkova, Mariia and Peri, Neehar and Khatri, Ishan and Ramanan, Deva and Cremers, Daniel},
-  journal={arXiv preprint arXiv:2608.17110},
-  year={2026}
+@inproceedings{gladkova2026ov3d,
+  title     = {OV3D-Bench: A Diagnostic Benchmark for Open-Vocabulary Monocular 3D Detection},
+  author    = {Gladkova, Mariia and Peri, Neehar and Khatri, Ishan and
+               Ramanan, Deva and Cremers, Daniel},
+  booktitle = {7th Workshop on Open-World 3D Scene Understanding and
+               Representations (OpenSUN3D), European Conference on Computer
+               Vision (ECCV) Workshops},
+  address   = {Malm\"o, Sweden},
+  year      = {2026}
 }
 ```
 
