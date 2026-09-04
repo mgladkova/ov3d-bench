@@ -18,10 +18,13 @@ pip install -e '.[data]'    # + building datasets from raw sources
 ```
 
 **PyTorch3D is required** and is not installable from PyPI. It provides the 3D IoU
-used by every metric, and needs a build matched to your torch and CUDA version:
+used by every metric and needs a build matched to your torch and CUDA version, so
+it cannot be declared in `pyproject.toml`. Either install it yourself, or use the
+conda environment file, which pins the combination this benchmark was verified
+against (Python 3.10, torch 2.0.1, CUDA 11.8, PyTorch3D 0.7.4):
 
 ```bash
-conda install pytorch3d -c pytorch3d      # or build from source
+conda env create -f environment.yml && conda activate ov3d-bench
 ```
 
 ## 🚀 Use
@@ -33,10 +36,9 @@ ov3d-bench eval --gt-json ARKitScenes_test.json --pred predictions.pth \
 
 The dataset-level vocabulary defaults to the lists shipped with the benchmark.
 
-Other commands: `per-category` (dataset-level vs target-aware AP per class),
-`vocab-subset` (how much AP depends on which categories are scored), `supercat`
-(confusion on a coarse shared ontology), `templates` (prompt robustness).
-Add `--visualize` to `eval` for ground-truth-vs-prediction 3D box overlays.
+Other commands: `per-category`, `vocab-subset`, `supercat`, `templates`, and
+remapping a closed-vocabulary detector. **[docs/USAGE.md](docs/USAGE.md) documents
+every command with a worked example and its Python equivalent.**
 
 ### 📄 Prediction format
 

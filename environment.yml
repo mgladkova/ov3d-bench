@@ -1,0 +1,40 @@
+# Conda environment for OV3D-Bench.
+#
+# This exists for one reason: PyTorch3D provides the 3D IoU every metric depends
+# on, and it is not installable from PyPI, so `pyproject.toml` cannot declare it.
+# Everything else is expressed there; pip and uv users need only
+# `pip install -e '.[remap]'` plus a PyTorch3D build of their own.
+#
+# The versions below are the combination this benchmark was developed and
+# verified against. torch, CUDA and pytorch3d must agree with each other; if you
+# change one, change all three.
+#
+#   conda env create -f environment.yml
+#   conda activate ov3d-bench
+#   pip install -e '.[remap]'
+#
+name: ov3d-bench
+channels:
+  - pytorch3d
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pytorch=2.0.1
+  - pytorch-cuda=11.8      # drop this line for a CPU-only install
+  - pytorch3d=0.7.4
+  - numpy=1.26
+  - scipy=1.15
+  - matplotlib=3.10
+  - pillow
+  - tqdm
+  - pip
+  - pip:
+      - opencv-python>=4.5
+      - pycocotools>=2.0
+      # the package itself, plus optional extras:
+      #   -e .          evaluation only
+      #   -e '.[remap]' + SigLIPv2/CLIP remapping
+      #   -e '.[data]'  + building datasets from raw sources
+      - -e .
